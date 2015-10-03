@@ -1,0 +1,12 @@
+(source gnu)
+(source melpa)
+
+(depends-on "pallet")
+
+(depends-on "auto-complete")
+(depends-on "flycheck")
+(depends-on "go-autocomplete")
+(depends-on "go-eldoc")
+(depends-on "go-mode")
+(depends-on "magit")
+(depends-on "yasnippet")
