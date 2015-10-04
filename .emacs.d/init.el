@@ -35,6 +35,8 @@
 (setq custom-file (expand-file-name "~/.emacs.d/my-lisp/custom.el"))
 (load-file custom-file)
 
+;;; OSX users may want to install exec-path-from-shell and copy GOPATH to their environment
+(load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
 (require 'hooks)
 
 (provide 'init)
