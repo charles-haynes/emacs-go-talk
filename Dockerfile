@@ -39,11 +39,13 @@ RUN \
 
 ENV PATH="${HOME}/.cask/bin:${PATH}"
 
-COPY .emacs.d  .emacs.d/
+COPY .emacs.d/Cask  .emacs.d/Cask
 
 WORKDIR .emacs.d
 
 RUN \
     cask install
+
+COPY .emacs.d  ./
 
 WORKDIR "${HOME}"

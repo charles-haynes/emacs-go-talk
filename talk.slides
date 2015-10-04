@@ -1,0 +1,32 @@
+go-mode
+        beginning-of-defun (C-M-a)
+        end-of-defun (C-M-e)
+
+        Integration with gofmt
+                    providing a command of the same name, 
+                    gofmt-before-save, which can be used in a hook to format Go buffers before saving them.
+                    Setting the gofmt-command variable also allows using goimports.
+
+        Integration with godoc via the functions godoc and godoc-at-point.
+                    godoc
+                    godoc-at-point
+
+        Integration with the Playground
+                    go-play-buffer and go-play-region to send code to the Playground
+                    go-download-play to download a Playground entry into a new buffer
+
+        Managing imports
+                A function for jumping to the file's imports (go-goto-imports)
+                A function for adding imports, including tab completion (go-import-add, bound to C-c C-a)
+                A function for removing or commenting unused imports (go-remove-unused-imports)
+
+        Integration with godef
+                    godef-describe (C-c C-d) to describe expressions
+                    godef-jump (C-c C-j) and godef-jump-other-window (C-x 4 C-c C-j) to jump to declarations
+                    This requires you to install godef via go get github.com/rogpeppe/godef.
+
+        Basic support for imenu (functions and variables)
+
+        Built-in support for displaying code coverage as calculated by go test (go-coverage)
+
+F10 to get menu
