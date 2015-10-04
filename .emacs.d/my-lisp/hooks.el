@@ -26,8 +26,6 @@
 
 ;;; Code:
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
-
 (defun my-go-mode-hook ()
   ; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)

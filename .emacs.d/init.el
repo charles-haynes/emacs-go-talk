@@ -32,7 +32,9 @@
 (require 'pallet)
 (pallet-mode t)
 
-(require 'custom)
+(setq custom-file (expand-file-name "~/.emacs.d/my-lisp/custom.el"))
+(load-file custom-file)
+
 (require 'hooks)
 
 (provide 'init)
