@@ -35,7 +35,9 @@
       (set (make-local-variable 'compile-command)
            "go generate && go install -v && go test -v && go vet"))
   ; Godef jump key binding
-  (local-set-key (kbd "M-.") 'godef-jump))
+  (local-set-key (kbd "M-.") 'godef-jump)
+  ; set up eldoc
+  (go-eldoc-setup))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 (provide 'hooks)

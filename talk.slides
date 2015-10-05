@@ -10,6 +10,7 @@ go-mode
                     Setting the gofmt-command variable also allows using goimports.
 
         Integration with godoc via the functions godoc and godoc-at-point.
+                    [no bindings]
                     godoc
                     godoc-at-point
 
@@ -37,3 +38,11 @@ go-mode
 F10 to get menu
 
 http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
+https://github.com/syohex/emacs-go-eldoc
+
+magit
+        [bound to C-x g]
+
+go-eldoc
+        depends on gocod and go-mode
+        
