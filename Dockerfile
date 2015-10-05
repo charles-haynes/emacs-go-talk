@@ -21,12 +21,14 @@ RUN \
 
 ENV PATH="/usr/local/go/bin:${PATH}" GOPATH="${HOME}/go"
 
+# golang.org tools
 RUN \
     go get -u \
        golang.org/x/tools/cmd/godoc \
        golang.org/x/tools/cmd/goimports \
        golang.org/x/tools/cmd/oracle
 
+# third party tools
 RUN \
     go get -u \
        github.com/golang/lint/golint \
