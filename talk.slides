@@ -45,4 +45,15 @@ magit
 
 go-eldoc
         depends on gocod and go-mode
-        
+
+go oracle
+   Set the oracle analysis scope
+   From within emacs, open $GOPATH/src/github.com/tleyden/checkers-bot-minimax/thinker.go
+   You need to tell Go Oracle the main package scope under which you want it to operate:
+   M-x go-oracle-set-scope
+   it will prompt you with:
+   Go oracle scope:
+   and you should enter:
+   github.com/tleyden/checkers-bot-minimax and hit Enter.
+   Nothing will appear to happen, but now Go Oracle is now ready to show it’s magic. (note it will not autocomplete packages in this dialog, which is mildly annoying. Make sure to spell them correctly.)
+   Important: When you call go-oracle-set-scope, you always need to give it a main package. This is something that will probably frequently trip you up while using Go Oracle.

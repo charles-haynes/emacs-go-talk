@@ -5,11 +5,13 @@ MAINTAINER "ceh@ceh.bz"
 ENV HOME=/root
 WORKDIR "${HOME}"
 
+# gcc is only needed for cgo (needed by go oracle?)
 RUN \
     apt-get update &&\
     apt-get install -y \
         curl \
         emacs24-nox \
+        gcc \
         git \
         python
 
@@ -36,6 +38,9 @@ ENV PATH="${GOPATH}/bin:${PATH}"
 
 RUN \
     git clone https://github.com/cask/cask.git .cask
+
+RUN \
+    git clone https://github.com/dominikh/yasnippet-go .emacs.d/yasnippet-go
 
 ENV PATH="${HOME}/.cask/bin:${PATH}"
 

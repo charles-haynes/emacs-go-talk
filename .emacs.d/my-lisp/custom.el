@@ -38,7 +38,11 @@
  '(global-flycheck-mode t)
  '(global-linum-mode t)
  '(gofmt-command "goimports")
- '(line-number-mode t))
+ '(line-number-mode t)
+ '(yas-global-mode t nil (yasnippet))
+ '(yas-snippet-dirs
+   (quote
+    ("~/.emacs.d/yasnippet-go/" yas-installed-snippets-dir)) nil (yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
