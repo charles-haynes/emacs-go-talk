@@ -26,12 +26,9 @@ and the [[http://play.golang.org/][go playground]]
 
 * go install
 
-If you're still using `go`run` or `go`build` you should switch to using
-`go`install` for everything. It caches intermediate results greatly speeding
-up your builds.
+If you're still using `go`run` or `go`build` you should switch to using `go`install` for everything. It caches intermediate results greatly speeding up your builds.
 
-We modify Emacs's default `compile` command when in `go-mode` to use
-`go`install`.
+We modify Emacs's default `compile` command when in `go-mode` to use `go`install`.
 
 .code .emacs.d/my-lisp/hooks.el /Customize compile command/,/go vet/
 
@@ -41,8 +38,7 @@ Invoke it with
 
 * gofmt
 
-Everyone should know about `gofmt`. It is the canonical pretty printer.
-All go code should be formatted using `gofmt`
+Everyone should know about `gofmt`. It is the canonical pretty printer. All go code should be formatted using `gofmt`
 
 Run `gofmt` on every file save.
 
@@ -54,9 +50,7 @@ Invoke it by saving a go source file.
 
 * goimports
 
-I lied.  Don't use `gofmt` use `goimports`. It formats your code like
-`gofmt` does, and also manages your imports.  It adds missing imports,
-removes unused imports, and put imports in order.
+I lied.  Don't use `gofmt` use `goimports`. It formats your code like `gofmt` does, and also manages your imports.  It adds missing imports, removes unused imports, and put imports in order.
 
 .code Dockerfile /# golang.org tools/,/oracle/
 
@@ -68,9 +62,7 @@ Invoke it by saving a go source file.
 
 * go vet
 
-`go`vet` checks your code for suspicious code that may not be caught by a
-compiler. It's intended to find errors but not everything it finds may be an
-actual error.
+`go`vet` checks your code for suspicious code that may not be caught by a compiler. It's intended to find errors but not everything it finds may be an actual error.
 
 We've added go vet to the `compile` command.
 
@@ -82,9 +74,7 @@ Invoke it with
 
 * go test
 
-`go`test` runs your tests. You should always have tests. We will run tests on
-every `compile`, and also integrate coverage analysis using the `go-coverage`
-command.
+`go`test` runs your tests. You should always have tests. We will run tests on every `compile`
 
 We've added go test to the `compile` command.
 
@@ -96,21 +86,15 @@ Invoke it with
 
 * go test -cover and go-coverage
 
-`go-coverage` is part of `go-mode` First create a test coverage file using
-`go`test`-coverprofile=cover.out` then run
+`go-coverage` is part of `go-mode` First create a test coverage file using `go`test`-coverprofile=cover.out` then run
 
     M-x go-coverage
 
-in the buffer you want to see the coverage of. It will prompt you for
-the coverage file (`cover.out` in this case) and open a cloned buffer
-with visual display of coverage. This buffer is fully a fully functional
-buffer visiting the same file.
+in the buffer you want to see the coverage of. It will prompt you for the coverage file (`cover.out` in this case) and open a cloned buffer with visual display of coverage. This buffer is fully a fully functional buffer visiting the same file.
 
 * golint
 
-`golint` is a style checker. It's more than just a pretty printer, and it finds
-things that aren't strictly logic errors, and so aren't appropriate for `go`vet`
-It's quite opinionated, and you should not treat everything it says as gospel.
+`golint` is a style checker. It's more than just a pretty printer, and it finds things that aren't strictly logic errors, and so aren't appropriate for `go`vet` It's quite opinionated, and you should not treat everything it says as gospel.
 
 It tries to implement suggestions from [[https://golang.org/doc/effective_go.html][Effective Go]] and [[https://github.com/golang/go/wiki/CodeReviewComments][Go Code Review Comments]]
 
@@ -133,7 +117,7 @@ Automatically used by `flycheck` if `errcheck` is installed.
 
 * godef
 
-Shows you where a symbol is defined.
+Included in `go-mode`, shows you where a symbol is defined.
 
 To use it, put point on the symbol of interest and invoke it with
 
@@ -149,10 +133,7 @@ to invoke `pop-tag-mark`
 
 * godoc
 
-`godoc` from the command line will print the documentation for a
-command, package, or name in a package. `go-mode` binds it to `godoc`
-and `godoc-at-point` Invoke it by putting point on a symbol you're interested
-in then
+`godoc` from the command line will print the documentation for a command, package, or name in a package. `go-mode` binds the `godoc` and `godoc-at-point` commands to call `godoc`.  Invoke it by putting point on a symbol you're interested in then
 
    M-x godoc-at-point
 
@@ -160,13 +141,9 @@ in then
 
 * oracle
 
-`oracle` is a sophisticated source analysis tool that can answer
-various questions about go programs: `callees`, `callers`,
-`callstack`, `definition`, `describe`, `freevars`, `implements`,
-`peers`, `referrers`, and `what`
+`oracle` is a sophisticated source analysis tool that can answer various questions about go programs: `callees`, `callers`, `callstack`, `definition`, `describe`, `freevars`, `implements`, `peers`, `referrers`, and `what`
 
-`go-mode` binds oracle commands to various `C-c`C-o` prefix commands to answer
-questions about the code at the current position.
+`go-mode` binds oracle commands to various `C-c`C-o` prefix commands to answer questions about the code at the current position.
 
 .code Dockerfile /# golang.org tools/,/oracle/
 
@@ -178,17 +155,11 @@ We integrate `git` with emacs using `magit` and bind it to
 
     C-x g
 
-A full discussion of `magit` is a talk in and of itself, the short
-version is that `magit` lets you use the full power of git from within
-emacs, in an "emacsy" way.
+A full discussion of `magit` is a talk in and of itself, the short version is that `magit` lets you use the full power of git from within emacs, in an "emacsy" way.
 
 * go playground
 
-The go playground is a place to try code out and share code with other people.
-`go-mode` adds three commands to emacs to make using the playground easier.
-`go-play-buffer` sends the current buffer to the playground, `go-play-region`
-does the same thing for a region. `go-download-play` lets you directly download
-a playground url into a new buffer.
+The go playground is a place to try code out and share code with other people. `go-mode` adds three commands to emacs to make using the playground easier. `go-play-buffer` sends the current buffer to the playground, `go-play-region` does the same thing for a region. `go-download-play` lets you directly download a playground url into a new buffer.
 
 * Emacs specific
 
@@ -247,8 +218,7 @@ Then customizing yasnippet to know about the go repo in your customization file
 - beginning-of-defun (C-M-a)
 - end-of-defun (C-M-e)
 
-As already mentioned, it integrates with gofmt, godoc, Playground, godef, and go-coverage
-It also provides integration with imenu and provides tools for managing imports.
+As already mentioned, it integrates with gofmt, godoc, Playground, godef, and go-coverage It also provides integration with imenu and provides tools for managing imports.
 
 * go-mode cont.
 
