@@ -38,6 +38,7 @@
 ;;; OSX users may want to install exec-path-from-shell and copy GOPATH to their environment
 (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
 (require 'hooks)
+(require 'keybindings)
 
 (provide 'init)
 ;;; init.el ends here
