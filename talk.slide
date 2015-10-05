@@ -268,4 +268,4 @@ Then set up a go-mode hook to configure it:
 
 * Slides and resources
 
-This presentation is [[https://go-talks.appspot.com/github.com/charles-haynes/emacs-go-talk/talk.slide][available online]]  and the source repo is [[https://github.com/charles-haynes/emacs-go-talk][available on github]]. It includes a [[https://github.com/charles-haynes/emacs-go-talk/blob/master/Dockerfile][Docker file]] for building a working emacs with all of the tools from this talk installed and working. The docker image is also available on docker-hub.
+This presentation is [[https://go-talks.appspot.com/github.com/charles-haynes/emacs-go-talk/talk.slide][available online]]  and the source repo is [[https://github.com/charles-haynes/emacs-go-talk][available on github]]. It includes a [[https://github.com/charles-haynes/emacs-go-talk/blob/master/Dockerfile][Docker file]] for building a working emacs with all of the tools from this talk installed and configured. The docker image is also available on docker hub as [[https://hub.docker.com/r/charleshaynes/go_emacs/][charleshaynes/go_emacs]]
