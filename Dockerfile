@@ -56,3 +56,9 @@ RUN \
 COPY .emacs.d  ./
 
 WORKDIR "${HOME}"
+
+RUN \
+    go get -u \
+       github.com/charles-haynes/emacs-go-talk
+
+COPY demo.go go/src/github.com/charles-haynes/emacs-go-talk/
